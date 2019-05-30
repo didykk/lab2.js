@@ -1,0 +1,23 @@
+<title>Tasks</title>
+<h1>Tasks</h1>
+
+<form action="/tasks" method="post">
+  <div>
+    <label>
+      Task:
+      <input type="text" placeholder="Your task" name="task">
+      <input type="submit" value="send"><br>
+    </label>
+  </div>
+</form>
+
+  <% for (let tasksItem of tasks) { %>
+    <ul>
+      <li>
+        <label>
+         <input type="checkbox" checkted="checkted" name="name"/><%= tasksItem.task%>
+         <a href="/<%= tasksItem._id %>/delete">Delete</a>
+        </label>
+      </li>
+    </ul>
+  <% } %>
